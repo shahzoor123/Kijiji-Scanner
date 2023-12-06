@@ -1,9 +1,3 @@
 {
-    
-    "version": 2,
-    "builds": [{
-        "src": "scraper.py",
-        "use": "@vercel/python"
-    }]
-    
-}
+    "redirects": [{ "source": "/", "destination": "/api" }]
+  }
