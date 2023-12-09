@@ -31,7 +31,7 @@ def checking():
         with open(seen_ads_file, 'w') as file:
             file.write('\n'.join(new_ads))
     else:
-        with open(seen_ads_file, 'r') as file:
+        with open(seen_ads_file, 'r', encoding='utf-8') as file:
             seen_ads = set(file.read().splitlines())
 
         # Check for new ads
@@ -43,7 +43,7 @@ def checking():
             print("New ads found:")
             for ad in unseen_ads:
                 print(ad)
-            with open(seen_ads_file, 'a') as file:
+            with open(seen_ads_file, 'a', encoding='utf-8') as file:
                 file.write('\n'.join(unseen_ads))
                 file.write('\n')
                 Send_SMS(url_to_scrape_actual_data, unseen_ads)
@@ -87,7 +87,7 @@ def Send_SMS(url, ad_data):
     print("i am sending sms")
     
     account_sid = "AC96d42f46854b5cf18cd371b2a556c7cb"
-    account_token = "8bb0e7ff782e663eb2f14a2fd9ac336d"
+    account_token = "9b69946ab8fb2519af85ae9b97ba6e13"
     twillio_number = "+16184214328"
     receipiant_number = "+16477161092"
 
@@ -113,4 +113,4 @@ schedule.every(1).minutes.do(checking)
 # Run the scheduler
 while True:
     schedule.run_pending()
-    time.sleep(1)
+    time.sleep(.001)
