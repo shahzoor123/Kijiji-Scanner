@@ -113,4 +113,4 @@ schedule.every(1).minutes.do(checking)
 # Run the scheduler
 while True:
     schedule.run_pending()
-    time.sleep(.001)
+    time.sleep(.3)
