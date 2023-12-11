@@ -129,7 +129,7 @@ def Send_SMS(url, ad_data):
     
     
 # Schedule the checking function to run every 5 minutes
-schedule.every(.01).minutes.do(checking)
+schedule.every(1).minutes.do(checking)
 
 # Run the scheduler
 while True:
