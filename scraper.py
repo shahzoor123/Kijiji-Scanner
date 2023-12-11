@@ -114,11 +114,11 @@ def Send_SMS(url, ad_data):
 
     client = Client(account_sid, account_token)
 
-    message = client.messages.create(
-        body = f'Hi Sameer we found new Ads post of your interest Here it is : \n \n {ad_data} \n \n Link : https://www.kijiji.ca{url}',
-        from_=twillio_number,
-        to=receipiant_number
-    )
+    # message = client.messages.create(
+    #     body = f'Hi Sameer we found new Ads post of your interest Here it is : \n \n {ad_data} \n \n Link : https://www.kijiji.ca{url}',
+    #     from_=twillio_number,
+    #     to=receipiant_number
+    # )
 
     print('sended')
     
@@ -129,7 +129,7 @@ def Send_SMS(url, ad_data):
     
     
 # Schedule the checking function to run every 5 minutes
-schedule.every(1).minutes.do(checking)
+schedule.every(.01).minutes.do(checking)
 
 # Run the scheduler
 while True:
