@@ -108,9 +108,9 @@ def Send_SMS(url, ad_data):
     print("i am sending sms" , url)
     
     account_sid = "AC96d42f46854b5cf18cd371b2a556c7cb"
-    account_token = "9b69946ab8fb2519af85ae9b97ba6e13"
+    account_token = "7c21d0985a5e2831da3200bf21f38153"
     twillio_number = "+16184214328"
-    receipiant_number = "+923138409209"
+    receipiant_number = "+16477161092"
 
     client = Client(account_sid, account_token)
 
@@ -129,7 +129,7 @@ def Send_SMS(url, ad_data):
     
     
 # Schedule the checking function to run every 5 minutes
-schedule.every(1).minutes.do(checking)
+schedule.every(.01).minutes.do(checking)
 
 # Run the scheduler
 while True:
