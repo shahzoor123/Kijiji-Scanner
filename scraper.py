@@ -6,6 +6,7 @@ import schedule
 import time
 import os
 from twilio.rest import Client
+from dotenv import load_dotenv
 
 
 
@@ -101,30 +102,29 @@ def scrape_data(url):
 # \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\# \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
 
 
+load_dotenv()
 
 
 def Send_SMS(url, ad_data):
     
     print("i am sending sms" , url)
     
-    account_sid = "AC967971d483839eeb52b684cf2d7e4895"
-    account_token = "6c37113a03819095d5d906367bff0e81"
+    account_sid = os.getenv("SID")
+    account_token = os.getenv("API_KEY")
     twillio_number = "+12057297076"
     receipiant_number = "+16478820415"
 
     client = Client(account_sid, account_token)
 
     message = client.messages.create(
-        body = f'Hi Sameer we found new Ads post of your interest Here it is : \n \n {ad_data} \n \n Link : https://www.kijiji.ca{url}',
+        body = f'Title : \n \n {ad_data} \n \n Ad Link : https://www.kijiji.ca{url}',
         from_=twillio_number,
         to=receipiant_number
     )
 
     print('sended')
     
-   
-
-
+ 
 # \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
     
     
