@@ -9,12 +9,15 @@ from twilio.rest import Client
 from dotenv import load_dotenv
 
 
-
+load_dotenv()
 # Set the current working directory to the script's directory
 script_dir = os.path.dirname(os.path.realpath(__file__))
 os.chdir(script_dir)
 
+account_sid = os.getenv("SID")
+account_token = os.getenv("API_KEY")
 
+print(account_sid,account_token)
 
 # \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
         
@@ -102,7 +105,7 @@ def scrape_data(url):
 # \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\# \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
 
 
-load_dotenv()
+
 
 
 def Send_SMS(url, ad_data):
@@ -113,6 +116,8 @@ def Send_SMS(url, ad_data):
     account_token = os.getenv("API_KEY")
     twillio_number = "+12057297076"
     receipiant_number = "+16477161092"
+    
+  
 
     client = Client(account_sid, account_token)
 
