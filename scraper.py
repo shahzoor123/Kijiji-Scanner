@@ -112,7 +112,7 @@ def Send_SMS(url, ad_data):
     account_sid = os.getenv("SID")
     account_token = os.getenv("API_KEY")
     twillio_number = "+12057297076"
-    receipiant_number = "+16478820415"
+    receipiant_number = "+16477161092"
 
     client = Client(account_sid, account_token)
 
@@ -129,7 +129,7 @@ def Send_SMS(url, ad_data):
     
     
 # Schedule the checking function to run every 5 minutes
-schedule.every(1).minutes.do(checking)
+schedule.every(.1).minutes.do(checking)
 
 # Run the scheduler
 while True:
