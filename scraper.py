@@ -76,7 +76,7 @@ def scrape_data(url):
         soup = BeautifulSoup(response.text, 'html.parser')
 
       
-        ads = soup.find_all('a', class_='sc-388271ae-0 hLAAKW')
+        ads = soup.find_all('a', class_='sc-f29cfb55-0 hxOcgr')
 
         for ad in ads:
             # Extract title and href from the ad
